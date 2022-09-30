@@ -9,19 +9,20 @@ class PolyTreeNode
         @children = children
     end
 
-    def parent=(passed_node)
-        parent = 
-        #debugger
+    def parent= passed_node
+        # parent = 
+        # debugger
         #B.parent = A
-        self.parent = passed_node
-        #passed_node.children << self
+        @parent = passed_node
+        #B.parent
+        #passed_node.children << self 
 
     end
 
 end
 
-a = PolyTreeNode.new('A')
-b = PolyTreeNode.new('B')
-b.parent= a
-p b.parent => a
-p a.children => [b]
+p a = PolyTreeNode.new('A')
+p b = PolyTreeNode.new('B')
+p b.parent= a
+# p b.parent => a
+# p a.children => [b]
