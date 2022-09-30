@@ -8,7 +8,9 @@ class PolyTreeNode
         @children = children
     end
 
-    def parent=
+    def parent=(passed_node)
+        #self.parent = passed_node
+        #passed_node.children << self
 
     end
 
