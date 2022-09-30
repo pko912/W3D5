@@ -10,9 +10,12 @@ class PolyTreeNode
     end
 
     def parent= passed_node
-        
-        if !@parent.nil?
-            @parent.children - [self]
+
+        has_parent = !@parent.nil?
+        debugger
+        if has_parent
+            debugger
+            @parent.children.delete(self)
         end
 
         @parent = passed_node
@@ -21,6 +24,7 @@ class PolyTreeNode
             passed_node.children << self
         end
 
+        
 
         # if self.parent = nil
         #     return nil
@@ -33,7 +37,8 @@ end
 p a = PolyTreeNode.new('A')
 p b = PolyTreeNode.new('B')
 p c = PolyTreeNode.new('C')
-b.parent= a
+
+b.parent = a
 b.parent = c
 p b
 # p b.parent => a
