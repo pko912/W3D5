@@ -12,9 +12,9 @@ class PolyTreeNode
     def parent= passed_node
 
         @parent = passed_node
-        #A.children[B] 
-        passed_node.children << self
-        #passed_node.children << self 
+        if !passed_node.children.include?(self)
+            passed_node.children << self
+        end
 
     end
 
@@ -22,7 +22,7 @@ end
 
 p a = PolyTreeNode.new('A')
 p b = PolyTreeNode.new('B')
-b.parent= a 
+b.parent= nil 
 p b
 # p b.parent => a
 # p a.children => [b]
