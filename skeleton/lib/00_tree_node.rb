@@ -12,24 +12,23 @@ class PolyTreeNode
     def parent= passed_node
 
         has_parent = !@parent.nil?
-        debugger
+        #debugger
         if has_parent
-            debugger
+            #debugger
             @parent.children.delete(self)
         end
 
         @parent = passed_node
         
+        return nil if self.parent == nil
         if !passed_node.children.include?(self)
             passed_node.children << self
         end
+    end
 
-        
-
-        # if self.parent = nil
-        #     return nil
-        # end
-
+    def add_child(child_node)
+        @children << child_node
+        child_node.parent= self
     end
 
 end
