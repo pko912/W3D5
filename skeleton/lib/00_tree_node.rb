@@ -12,9 +12,8 @@ class PolyTreeNode
     def parent= passed_node
 
         has_parent = !@parent.nil?
-        #debugger
+
         if has_parent
-            #debugger
             @parent.children.delete(self)
         end
 
@@ -29,6 +28,12 @@ class PolyTreeNode
     def add_child(child_node)
         @children << child_node
         child_node.parent= self
+    end
+
+    def remove_child(child_node)
+        child_node.parent= nil
+        raise ArgumentError.new "not a child in this node" if !@children.include?(child_node)
+        @children.delete(child_node) 
     end
 
 end
