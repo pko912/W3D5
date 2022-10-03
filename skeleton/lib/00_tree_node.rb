@@ -36,6 +36,10 @@ class PolyTreeNode
         @children.delete(child_node) 
     end
 
+    def dfs(target_value)
+        return self if target_value == self.value
+    end
+
 end
 
 p a = PolyTreeNode.new('A')
